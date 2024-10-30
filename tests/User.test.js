@@ -21,13 +21,14 @@ describe("User property tests", () => {
 
 describe('User method tests', () => {
   // test login
-  user.login('test123')
   test('loggedIn should be true', () => {
+    user.login('test123')
+    console.log(user.loggedIn)
     expect(user.loggedIn).toBe(true)
   })
   // test logout
-  user.logout()
   test('loggedIn should be false', () => {
+    user.logout()
     expect(user.loggedIn).toBe(false)
   })
   // test error
