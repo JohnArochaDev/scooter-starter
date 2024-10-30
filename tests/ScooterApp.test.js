@@ -51,3 +51,13 @@ describe('Testing the dock method', () => {
 
 
 // rent scooter
+describe('Testing the rentScooter method', () => {
+  test('scooter should hold the user', () => {
+    scooterApp.rentScooter(scooter, joeBloggs)
+    expect(scooter.user).toEqual(joeBloggs)
+  })
+  test('should throw error', () => {
+    scooter.station = null
+    expect(() => scooterApp.rentScooter(scooter, joeBloggs)).toThrow('scooter already rented')
+  })
+})
