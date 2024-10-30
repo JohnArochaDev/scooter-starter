@@ -53,6 +53,19 @@ class ScooterApp {
       console.log('scooter is docked')
     }
   }
+
+  rentScooter(scooter, user) {
+    if (scooter.station == null) {
+      throw new Error('scooter already rented')
+    } else {
+      scooter.rent(user)
+    }
+  }
+
+  print() {
+    console.log('Registered users: \n', this.registeredUsers)
+    console.log('Stations: \n', this.stations)
+  }
 }
 
 module.exports = ScooterApp
