@@ -10,7 +10,7 @@ class Scooter{
     this.isBroken = false
   }
   rent(user) {
-    if(this.charge > 20 && this.isBroken) {
+    if(this.charge > 20 && !this.isBroken) {
       this.user = user
       this.station = null
     } else {
