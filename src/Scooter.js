@@ -19,7 +19,7 @@ class Scooter{
   }
   dock(station) {
     this.station = station
-    this.user = user
+    this.user = null
   }
 
 }

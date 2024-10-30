@@ -25,6 +25,14 @@ describe('scooter methods', () => {
     expect(() => scooter.rent(joeBloggs)).toThrow('scooter needs repair')
   })
   //dock method
+  test('the station shoudl equal Denver', () => {
+    scooter.dock('Denver')
+    expect(scooter.station).toEqual('Denver')
+  })
+  test('the user shoudl equal null', () => {
+    scooter.dock('Denver')
+    expect(scooter.user).toEqual(null)
+  })
 
   //requestRepair method
 

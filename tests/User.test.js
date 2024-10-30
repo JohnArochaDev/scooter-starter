@@ -23,7 +23,6 @@ describe('User method tests', () => {
   // test login
   test('loggedIn should be true', () => {
     user.login('test123')
-    console.log(user.loggedIn)
     expect(user.loggedIn).toBe(true)
   })
   // test logout
