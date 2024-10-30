@@ -35,6 +35,7 @@ describe('scooter methods', () => {
   })
 
   //requestRepair method
+  
 
   //charge method
 

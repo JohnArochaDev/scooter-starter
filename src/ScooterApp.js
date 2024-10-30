@@ -10,9 +10,10 @@ class ScooterApp {
 
   registerUser(username, password, age) {
     if (!this.registeredUsers.includes(username) && age >= 18) {
-      this.registeredUsers.push(new User(username, password, age))
+      let newUser = new User(username, password, age)
+      this.registeredUsers.push(newUser)
       console.log('user has been registered')
-      return username
+      return newUser
     } else if(this.registeredUsers.includes(username)) {
       throw new Error('already registered')
     } else if (age < 18) {
@@ -23,12 +24,16 @@ class ScooterApp {
   loginUser(username, password) {
     const user = this.registeredUsers.find(user => user.username === username)
     user.login(password)
+    return user
   }
 
   logoutUser(username) {
     const user = this.registeredUsers.find(user => user.username === username)
-    if (user.loggedIn) {
-      user.logout()
+    if (user) {
+      if (user.loggedIn) {
+        user.logout()
+        return user
+      }
     } else {
       throw new Error('no such user is logged in')
     }
